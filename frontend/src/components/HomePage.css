@@ -11,6 +11,10 @@
     margin-bottom: 10px;
 }
 
+.home-page p {
+    color:black;
+}
+
 .task-list {
     display: flex;
     flex-direction: column;

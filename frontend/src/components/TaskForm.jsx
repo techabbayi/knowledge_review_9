@@ -5,6 +5,8 @@ export default function TaskForm() {
     return (
         <div>
             {/* Write your code here */}
+            <h1>Task Form</h1>
+            <button className="btn-form">Create Task</button>
         </div>
     );
 }

@@ -43,3 +43,19 @@ app.get('/tasks', async (req, res) => {
 
 // Write an endpoint to create a new task.
 
+app.post('/tasks', async (req, res) => {
+    const { title, dueDate, priority, status } = req.body;
+
+    if (!title || !dueDate || !priority || !status ) {
+        return res.status(400).json({ message: "All fields are required"});
+    }
+
+    try {
+        const newTask = new Task({ title, dueDate, priority, status });
+        await newTask.save()
+        
+        res.status(200).json(newTask);
+    } catch (err) {
+        res.status(400).json({ message: "Error WHile saving task data"});
+    }
+});
